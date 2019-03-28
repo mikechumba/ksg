@@ -19,8 +19,10 @@ def signup(request,role):
 
    title = 'KSG | Sign Up'
 
+   signup_role = Role.get_role(role)
+
    if request.method == 'POST':
-      form = RegistrationForm()
+      form = RegistrationForm(request.POST)
       if form.is_valid():
          form.save()
          username = form.cleaned_data.get('username')
@@ -28,14 +30,16 @@ def signup(request,role):
          user = authenticate(username=username,password=raw_password)
          login(request,user)
          role = Role.objects.get(role=role)
-         profile = Profile.create_profile(user,role)
+         profile = Profile.create_profile(user,signup_role)
          profile.save()
+         return redirect('dashboard')
    else:
       form = RegistrationForm()
 
    context = {
       'title': title,
       'form': form,
+      'role': role
    }
 
    return render(request,'registration/register.html',context)

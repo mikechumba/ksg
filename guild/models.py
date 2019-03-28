@@ -24,7 +24,7 @@ class Profile(models.Model):
 
    @classmethod
    def create_profile(cls,user,role):
-      profile = cls(user=user,bio='',avatar='default.jpg',role=role)
+      profile = cls(user=user,bio='',avatar='889f3b4b-40f9-4306-9a26-a1eb7225790f/default.jpg',role=role)
       return profile
 
    def __str__(self):

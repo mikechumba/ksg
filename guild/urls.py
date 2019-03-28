@@ -5,7 +5,7 @@ from . import views
 
 urlpatterns = [
    path('',views.landing,name='landing'),
-   path('dashboard',views.dashboard,name='dashboard'),
+   path('dashboard/',views.dashboard,name='dashboard'),
 
    # with forms
    path('new/',views.new_post,name='new'),

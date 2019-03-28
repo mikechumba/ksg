@@ -10,7 +10,12 @@
 
       <div class="content">
          <div class="auth-form">
-            <h3 class="legend">Sign up to find and review shared screenplays</h3>
+            {% if role == 'Writer' %}
+               <h3 class="legend">Sign up to store and share your screenplays.</h3>
+            {% else %}
+               <h3 class="legend">Sign up to find and review shared screenplays</h3>
+            {% endif %}
+      
             <form action="" method="POST">
                {% csrf_token %}
                {{ form.as_p }}
@@ -19,7 +24,7 @@
                </div>
             </form>
             <div class="alt-text">
-               <p>Have an Account? <a href="{% url 'login' %}">Sign Up</a></p>
+               <p>Have an Account? <a href="{% url 'login' %}">Log In</a></p>
             </div>
          </div>
       </div>
