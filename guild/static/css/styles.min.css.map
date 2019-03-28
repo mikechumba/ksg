@@ -1,8 +1,10 @@
 {
     "version": 3,
-    "mappings": "AAAA,AAAA,IAAI,AAAC,CACF,MAAM,CAAE,CAAC,CACT,OAAO,CAAE,CAAC,CACZ,AAED,AAAA,GAAG,AAAC,CACD,OAAO,CAAE,IAAI,CACb,WAAW,CAAE,MAAM,CAErB",
+    "mappings": "AAGA,AAAA,IAAI,AAAC,CACF,MAAM,CAAE,CAAC,CACT,OAAO,CAAE,CAAC,CACZ,AAED,AAAA,GAAG,AAAC,CACD,OAAO,CAAE,IAAI,CACb,WAAW,CAAE,MAAM,CAErB",
     "sources": [
-        "../../assets/styles.scss"
+        "../../assets/styles.scss",
+        "../../assets/helpers/_mixins.scss",
+        "../../assets/helpers/_functions.scss"
     ],
     "names": [],
     "file": "styles.min.css"

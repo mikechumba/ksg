@@ -17,6 +17,11 @@ class Profile(models.Model):
    avatar = ImageField()
    role = models.ForeignKey(Role, on_delete=models.CASCADE)
 
+   @classmethod
+   def create_profile(cls,user,role):
+      profile = cls(user=user,bio='',avatar='default.jpg',role=role)
+      return profile
+
    def __str__(self):
       return f"{self.user.first_name} {self.user.last_name}"
 
@@ -49,3 +54,5 @@ class Messages(models.Model):
    def __str__(self):
       return self.message
 
+   class Meta:
+      verbose_name_plural = 'Messages'

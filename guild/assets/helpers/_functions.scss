@@ -1,0 +1,10 @@
+$colors: (
+   'p': #0E0E10,
+   's': #D10015,
+   'p2': #141414,
+   's2': #D62834
+);
+
+@function clr($value) {
+   @return map-get($colors,$value)
+}

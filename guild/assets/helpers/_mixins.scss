@@ -1,0 +1,9 @@
+$f1: 'Courier',sans-serif;
+$f2: 'Raleway',sans-serif;
+
+@mixin fonts($color,$size,$weight: 500,$family: $f2) {
+   font-family: $family;
+   font-size: $size;
+   color: $color;
+   font-weight: $weight;
+}
