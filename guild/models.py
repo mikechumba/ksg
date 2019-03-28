@@ -29,8 +29,8 @@ class Post(models.Model):
 
    author = models.ForeignKey(Profile, on_delete=models.CASCADE)
    name = models.CharField(max_length=50)
-   logline = models.TextField(max_length=140)
-   file = FileField()
+   logline = models.TextField(max_length=300)
+   file = models.FileField(upload_to='screenplay', max_length=100)
 
    def __str__(self):
       return self.name

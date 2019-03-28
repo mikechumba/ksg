@@ -1,0 +1,15 @@
+{% load static %}
+<div class="nav-bg">
+
+   <nav>
+      <div class="logo">
+         <img src="{% static 'svg/document-fill.svg' %}" alt="">
+      </div>
+      <div class="menu-right">
+         <div class="avatar-sm">
+            <img src="{{ user.profile.avatar.cdn_url }}" alt="">
+         </div>
+      </div>
+   </nav>
+
+</div>

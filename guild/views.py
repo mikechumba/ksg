@@ -38,7 +38,7 @@ def signup(request,role):
 
    return render(request,'registration/register.html',context)
 
-def dashboard(request,role):
+def dashboard(request):
 
    title = f'{request.user.first_name} {request.user.last_name}'
 

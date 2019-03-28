@@ -11,4 +11,17 @@ nav {
       -ms-flex-align: center;
           align-items: center;
 }
+
+.logo, .avatar-sm {
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+}
+
+.logo img, .avatar-sm img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 /*# sourceMappingURL=styles.css.map */
