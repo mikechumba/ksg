@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
 from django.contrib.auth.models import User
+from .models import *
 
 class RegistrationForm(UserCreationForm):
 
@@ -16,3 +17,13 @@ class LoginForm(AuthenticationForm):
    class Meta:
       model = User
       fields = ['username','password'] 
+
+
+class PostForm(forms.ModelForm):
+   '''
+   To add screenplay
+   '''
+
+   class Meta:
+      model = Post
+      fields = ['name','medium','logline','file','genre']

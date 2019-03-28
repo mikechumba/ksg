@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block content %}
+
+   <div class="auth-form">
+      <form action="" method="POST">
+         {% csrf_token %}
+         {{ form.as_p }}
+         <div class="btn">
+            <button type='submit'></button>
+         </div>
+      </form>
+   </div>
+  
+{% endblock content %}

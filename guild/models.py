@@ -7,6 +7,11 @@ class Role(models.Model):
 
    role = models.CharField(max_length=50)
 
+   @classmethod
+   def get_role(cls,role):
+      role = cls.objects.filter(role=role).first()
+      return role
+
    def __str__(self):
       return self.role
 
@@ -29,11 +34,28 @@ class Post(models.Model):
 
    author = models.ForeignKey(Profile, on_delete=models.CASCADE)
    name = models.CharField(max_length=50)
+   medium = models.CharField(max_length=50,null=True)
    logline = models.TextField(max_length=300)
    file = models.FileField(upload_to='screenplay', max_length=100)
+   genre = models.CharField(max_length=50,null=True)
 
    def __str__(self):
       return self.name
+
+   @classmethod
+   def get_posts(cls,author):
+      posts = cls.objects.filter(author=author)
+      return posts
+
+   @classmethod
+   def by_medium(cls,medium):
+      posts = cls.objects.filter(medium=medium)
+      return posts
+
+   @classmethod
+   def by_category(cls,ctgry):
+      posts = cls.objects.filter(category=ctgry)
+      return posts
 
 class Review(models.Model):
 
@@ -56,3 +78,19 @@ class Messages(models.Model):
 
    class Meta:
       verbose_name_plural = 'Messages'
+
+
+class Genres(models.Model):
+
+   name = models.CharField(max_length=50)
+
+   def __str__(self):
+      return self.name
+
+   @classmethod
+   def get_all(cls):
+      genres = cls.objects.all()
+      return genres
+
+   class Meta:
+      verbose_name_plural = 'Genres'

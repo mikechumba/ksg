@@ -30,6 +30,8 @@ def signup(request,role):
          role = Role.objects.get(role=role)
          profile = Profile.create_profile(user,role)
          profile.save()
+   else:
+      form = RegistrationForm()
 
    context = {
       'title': title,
@@ -40,10 +42,19 @@ def signup(request,role):
 
 def dashboard(request):
 
+   posts = Post.get_posts(request.user.profile)
+
    title = f'{request.user.first_name} {request.user.last_name}'
 
+   genres = Genres.get_all()
+
+   role = Role.get_role(request.user.profile.role)
+
    context = {
-      'title': title
+      'title': title,
+      'posts': posts,
+      'genres': genres,
+      'role': role.role
    }
 
    return render(request,'dashboard.html',context)

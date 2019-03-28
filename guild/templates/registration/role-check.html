@@ -1,0 +1,7 @@
+{% load i18n %}
+
+{% if user.profile.role.name == 'Writer' %}
+   {% trans "hidden" as txt_color %}
+{% else %}
+   {% trans "" as txt_color %}
+{% endif %}

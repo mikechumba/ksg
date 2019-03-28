@@ -3,8 +3,71 @@
 
 {% block content %}
 
+   <div class="outer"></div>
    {% include "inner-nav.html" %}
 
+   <div class="page-content">
+
+      <div class="content">
+         {% if role == 'Writer' %}
+
+            <!-- for Writers -->
+            <div class="top">
+               <div class="about">
+                  <h4>Your Screenplays</h4>
+               </div>
+               <div class="filter">
    
+               </div>
+            </div>
+            <div class="posts">
+               {% for post in posts  %}
+                  <div class="card">
+                     <div class="content-container">
+                        <h4>{{ post.name }}</h4>
+                        <p></p>
+                        <p class='logline'>{{ post.logline }}</p>
+                        <a href="localhost:8000{{post.file.url}}" target="_blank"><i class="far fa-file-pdf"></i>  Screenplay</a>
+                     </div>
+                  </div>
+               {% endfor %}
+            </div>
+
+         {% else %}
+            <!-- For directors/producers -->
+            
+            <div class="top">
+               <div class="about">
+                  <h4>Screenplays</h4>
+               </div>
+               <div class="filter">
+                  <form action="" method="GET">
+                     <select name="location" onchange="this.form.submit()">
+                        <option value="" disabled selected>Filter By Genre</option>
+                        {% for genre in genres %}
+                           <option value="{{ genre.name }}">{{ genre.name }}</option>
+                        {% endfor %}
+                     </select>
+                  </form>
+               </div>
+            </div>
+            <div class="posts">
+               {% for post in posts  %}
+                  <div class="card">
+                     <div class="content-container">
+                        <h4>{{ post.name }}</h4>
+                        <p></p>
+                        <p class='logline'>{{ post.logline }}</p>
+                        <a href="localhost:8000{{post.file.url}}" target="_blank"><i class="far fa-file-pdf"></i>  Screenplay</a>
+                     </div>
+                  </div>
+               {% endfor %}
+            </div>
+            
+         {% endif %}
+         
+      </div>
+
+   </div>
 
 {% endblock content %}

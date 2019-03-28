@@ -6,6 +6,11 @@
          <img src="{% static 'svg/document-fill.svg' %}" alt="">
       </div>
       <div class="menu-right">
+         <div class="desc">
+               <h4>{{ user.first_name }}</h4>
+               <p>{{ user.profile.role }}</p>
+         </div>
+
          <div class="avatar-sm">
             <img src="{{ user.profile.avatar.cdn_url }}" alt="">
          </div>

@@ -9,17 +9,133 @@ body {
 nav {
    display: flex;
    align-items: center;
+   margin: 1%;
 }
 
+.outer {
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index: -10;
+   width: 100%;
+   height: 100vh;
+   background-color: #fff;
+}
 
+.menu-right {
+   display: flex;
+   margin-left: auto;
+   align-items: center;
 
-.logo, .avatar-sm {
-   width: 20px;
-   height: 20px;
+   .desc {
+      text-align: right;
+      margin-right: 2%;
+   }
+   h4 {
+      margin: 0;
+      @include fonts(clr(p2),12px,600);
+   }
+
+   p {
+      margin: 0;
+      @include fonts(rgba(clr(p2),0.6),9px);
+   }
+}
+
+.avatar-sm {
+   width: 24px;
+   height: 24px;
+   border-radius: 50%;
    overflow: hidden;
    img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+   }
+}
+
+.logo {
+   width: 16px;
+   height: 16px;
+   overflow: hidden;
+   vertical-align: middle;
+   img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+   }
+}
+
+
+.page-content {
+   background-color: #F2F4F8;
+   width: 96%;
+   margin: 0 auto;
+   box-sizing: border-box;
+   font-family: $f2;
+   border-radius: 26px 26px 0 0;
+}
+
+.content {
+   padding: 1% 2% 0 2%;
+}
+
+.posts {
+   display: flex;
+   flex-flow: row wrap;
+}
+
+.card {
+   background-color: #fff;
+   width: 32%;
+   margin: 0.6% 0.6%;
+}
+
+.content-container {
+   box-sizing: border-box;
+   padding: 1% 4%;
+
+   h4 {
+      @include fonts(clr(p2),14px,600);
+      &::before {
+         content: '';
+         display: block;
+         border: 1px solid clr(s);
+         width: 14%;
+         margin-bottom: 6%;
+      }
+   }
+
+   p.logline {
+      @include fonts(rgba(clr(p2),0.7),12px);
+   }
+
+   a {
+      @include fonts(clr(s2),12px,600);
+      text-decoration: none;
+      // padding: 4px 10px;
+      // border: 1px solid rgba(#333,0.5);
+      &:hover {
+         @include fonts(clr(s2),12px);
+      }
+   }
+}
+
+.top {
+   display: flex;
+   align-items: center;
+
+   .filter {
+      margin-left: auto;
+      select {
+         background-color: #fff;
+         padding: 6px 10px;
+         border: none;
+         @include fonts(clr(p2),11px,600);
+         option {
+            background-color: #fff;
+            border: none;
+         }
+      }
    }
 }
