@@ -4,24 +4,23 @@
 {% block content %}
 
    <div class="outer"></div>
-   {% include "nav.html" %}
+   {% include "inner-nav.html" %}
 
    <div class="page-content">
 
       <div class="content">
+
          <div class="auth-form">
-            <h3 class="legend">Sign up to find and review shared screenplays</h3>
-            <form action="" method="POST">
+            <h3 class="legend">Add a screenplay</h3>
+            <form action="" method="post" enctype="multipart/form-data">
                {% csrf_token %}
                {{ form.as_p }}
                <div class="btn">
-                  <button type='submit'>Sign Up</button>
+                  <button>Publish</button>
                </div>
             </form>
-            <div class="alt-text">
-               <p>Have an Account? <a href="{% url 'login' %}">Sign Up</a></p>
-            </div>
          </div>
+
       </div>
 
    </div>

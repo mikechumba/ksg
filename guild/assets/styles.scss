@@ -42,6 +42,10 @@ nav {
    }
 }
 
+button {
+   cursor: pointer;
+}
+
 .avatar-sm {
    width: 24px;
    height: 24px;
@@ -70,6 +74,7 @@ nav {
 .page-content {
    background-color: #F2F4F8;
    width: 96%;
+   height: 96vh;
    margin: 0 auto;
    box-sizing: border-box;
    font-family: $f2;
@@ -137,5 +142,79 @@ nav {
             border: none;
          }
       }
+
+      a {
+         text-decoration: none;
+         background-color: #fff;
+         padding: 10px 14px;
+         @include fonts(clr(p2),12px,600);
+         &:hover {
+            background-color: clr(s2);
+            font-weight: 700;
+         }
+      }
+   }
+}
+
+.helptext {
+   display: none;
+}
+
+.auth-form {
+   width: 30%;
+   margin: 0 auto;
+   input,textarea {
+      width: 100%;
+      padding: 8px 8px;
+      border: none;
+      // border-bottom: 1px solid clr(p2);
+      background-color: #fff;
+      box-shadow: 1px 1px 6px 2px rgba(#333,0.1);
+      &:focus {
+         border: none;
+         border: 1px solid rgba(clr(s2),0.1);
+         outline: none;
+         @include fonts(clr(p2),12px,600);
+      }
+   }
+
+   h3.legend {
+      width: 80%;
+      margin: 0 auto;
+      text-align: center;
+      @include fonts(clr(p2),16px,700)
+   }
+
+   p {
+      width: 100%;
+      padding: 1% 0;
+      @include fonts(clr(p2),12px,600)
+   }
+
+   .btn {
+      width: 40%;
+      margin: 0 auto;
+      text-align: center;
+   }
+
+   button {
+      background-color: clr(p);
+      border: none;
+      padding: 8px 13px;
+      @include fonts(#fff,12px,600);
+      &:hover {
+         background-color: clr(s);
+         box-shadow: 1px 1px 6px 2px rgba(#333,0.2);
+      }
+   }
+
+   ul li {
+      display: none;
+   }
+
+   .alt-text {
+      width: 50%;
+      margin: 0 auto;
+      text-align: center;
    }
 }

@@ -1,14 +1,17 @@
+{% load static %}
 <div class="nav-bg">
 
    <nav>
       <div class="logo">
-         <h1>ksg</h1>
+         <img src="{% static 'svg/document-fill.svg' %}" alt="">
       </div>
-      <div class="menu">
-         <p>Some</p>
-         <p>Things</p>
-         <p>Just</p>
-         <p>Things</p>
+      <div class="menu-right">
+         <div class="btn">
+            <a href="">Login</a>
+         </div>
+         <div class="btn">
+            <a href="">Sign Up</a>
+         </div>
       </div>
    </nav>
 

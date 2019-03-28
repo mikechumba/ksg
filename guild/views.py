@@ -59,6 +59,27 @@ def dashboard(request):
 
    return render(request,'dashboard.html',context)
 
+def new_post(request):
+
+   title = 'Add a Screenplay'
+
+   if request.method == 'POST':
+      form = PostForm(request.POST,request.FILES)
+      if form.is_valid():
+         post = form.save(commit=False)
+         post.author = request.user.profile
+         post.save()
+         return redirect('dashboard') 
+   else:
+      form = PostForm()
+
+   context = {
+      'title': title,
+      'form': form
+   }
+
+   return render(request,'new_post.html',context)
+
 def logout_view(request):
    logout(request)
    return redirect('login')

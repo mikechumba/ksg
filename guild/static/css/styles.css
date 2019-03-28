@@ -54,6 +54,10 @@ nav {
   font-weight: 500;
 }
 
+button {
+  cursor: pointer;
+}
+
 .avatar-sm {
   width: 24px;
   height: 24px;
@@ -85,6 +89,7 @@ nav {
 .page-content {
   background-color: #F2F4F8;
   width: 96%;
+  height: 96vh;
   margin: 0 auto;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -181,5 +186,99 @@ nav {
 .top .filter select option {
   background-color: #fff;
   border: none;
+}
+
+.top .filter a {
+  text-decoration: none;
+  background-color: #fff;
+  padding: 10px 14px;
+  font-family: "Raleway", sans-serif;
+  font-size: 12px;
+  color: #141414;
+  font-weight: 600;
+}
+
+.top .filter a:hover {
+  background-color: #D62834;
+  font-weight: 700;
+}
+
+.helptext {
+  display: none;
+}
+
+.auth-form {
+  width: 30%;
+  margin: 0 auto;
+}
+
+.auth-form input, .auth-form textarea {
+  width: 100%;
+  padding: 8px 8px;
+  border: none;
+  background-color: #fff;
+  -webkit-box-shadow: 1px 1px 6px 2px rgba(51, 51, 51, 0.1);
+          box-shadow: 1px 1px 6px 2px rgba(51, 51, 51, 0.1);
+}
+
+.auth-form input:focus, .auth-form textarea:focus {
+  border: none;
+  border: 1px solid rgba(214, 40, 52, 0.1);
+  outline: none;
+  font-family: "Raleway", sans-serif;
+  font-size: 12px;
+  color: #141414;
+  font-weight: 600;
+}
+
+.auth-form h3.legend {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  color: #141414;
+  font-weight: 700;
+}
+
+.auth-form p {
+  width: 100%;
+  padding: 1% 0;
+  font-family: "Raleway", sans-serif;
+  font-size: 12px;
+  color: #141414;
+  font-weight: 600;
+}
+
+.auth-form .btn {
+  width: 40%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.auth-form button {
+  background-color: #0E0E10;
+  border: none;
+  padding: 8px 13px;
+  font-family: "Raleway", sans-serif;
+  font-size: 12px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.auth-form button:hover {
+  background-color: #D10015;
+  -webkit-box-shadow: 1px 1px 6px 2px rgba(51, 51, 51, 0.2);
+          box-shadow: 1px 1px 6px 2px rgba(51, 51, 51, 0.2);
+}
+
+.auth-form ul li {
+  display: none;
+}
+
+.auth-form .alt-text {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
 }
 /*# sourceMappingURL=styles.css.map */

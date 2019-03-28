@@ -6,6 +6,9 @@ from . import views
 urlpatterns = [
    path('',views.landing,name='landing'),
    path('dashboard',views.dashboard,name='dashboard'),
+
+   # with forms
+   path('new/',views.new_post,name='new'),
    
    # auth
    path('signup/<role>/',views.signup,name='signup'),
